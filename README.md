@@ -4,9 +4,9 @@
 
 ## Below you will see the page of an app
 
-![alt text](https://github.com/barisdevjs/react-todo-app/blob/main/todo1.jpg)
+![alt text](https://github.com/barisdevjs/react-todo-app/blob/main/src/assets/todo1.jpg)
 
-![alt text](https://github.com/barisdevjs/react-todo-app/blob/main/todo2.jpg)
+![alt text](https://github.com/barisdevjs/react-todo-app/blob/main/src/assets/todo2.jpg)
 
 
 ---
