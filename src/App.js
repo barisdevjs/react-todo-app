@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem(LOCALSTROAGE_KEY));
-    if (storedTasks) {
+    if (storedTasks) { // converts to an array
       setTasks(storedTasks);
     }
   }, []); // [] empty array means run only once
@@ -26,12 +26,13 @@ function App() {
     setTasks(newTask);
   }
 
-  function addTask(e) {
+  function addTask() {
     const name = taskNameRef.current.value;
     if (name === '') return;
     setTasks(prevTasks => {
       return [...prevTasks, {name, id: Date.now(), completed: false}]
     })
+    taskNameRef.current.value = null; 
   }
 
   function deleteTask() {
@@ -39,13 +40,13 @@ function App() {
     setTasks(newTask);
   }
   return (
-    <>
+    <div className="App">
+      <button className='blue' onClick={addTask} >Add Task</button>
+      <button className='green'onClick={deleteTask}>Clear Completed</button>
+      <input className='task' ref={taskNameRef} type="text" />
+      <div>{tasks.filter(task => !task.completed).length}  task(s) left</div>
       <TodoList elementOfArray={tasks} toggleTask={toggleTask} />
-      <input ref={taskNameRef} type="text" />
-      <button onClick={addTask} >Add Task</button>
-      <button onClick={deleteTask}>Clear Completed</button>
-      <div>{tasks.filter(task => !task.completed).length} left task</div>
-    </>
+    </div>
   );
 }
 

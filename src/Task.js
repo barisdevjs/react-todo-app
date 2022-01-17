@@ -6,10 +6,10 @@ function Task({task,toggleTask}) {
     }
 
     return (
-        <div>
+        <div className="task">
             <label >
                 <input type="checkbox" checked={task.completed} onChange={handleTaskClick} />
-                {task.completed ? <strike>{task.name.toUpperCase()}</strike> : task.name}
+                {task.completed ? <strike>{task.name.toLowerCase()}</strike> : task.name.toUpperCase()}
             </label>
         </div>
     )
