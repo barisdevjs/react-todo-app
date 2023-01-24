@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Task({task,toggleTask}) {
+function Task({ task, toggler }) {
     function handleTaskClick() {
-        toggleTask(task.id);
+        toggler(task.id);
     }
 
     return (

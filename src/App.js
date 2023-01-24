@@ -44,8 +44,9 @@ function App() {
       <button className='blue' onClick={addTask} >Add Task</button>
       <button className='green'onClick={deleteTask}>Clear Completed</button>
       <input className='task' ref={taskNameRef} type="text" />
-      <div>{tasks.filter(task => !task.completed).length}  task(s) left</div>
-      <TodoList elementOfArray={tasks} toggleTask={toggleTask} />
+      <div>{tasks.filter(task => !task.completed).length > 1 ? tasks.filter(task => !task.completed).length +  ' tasks' :
+       tasks.filter(task => !task.completed).length + ' task'}  left</div>
+      <TodoList taskArr={tasks} toggler={toggleTask} />
     </div>
   );
 }

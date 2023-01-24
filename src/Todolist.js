@@ -1,11 +1,12 @@
 import React from 'react'
 import Task from './Task'
 
-export default function Todolist({elementOfArray , toggleTask}) {
+export default function Todolist({ taskArr, toggler }) {
     return (
-            elementOfArray.map(task => {
-                return <Task key={task.id} toggleTask={toggleTask} task={task} /> // key sadece uptade edilen itemleri update etmek için kullanılır.Efficiency purposes
-            })
+        taskArr.map(task => {
+            return <Task key={task.id} toggler={toggler} task={task} />
+            // key sadece update edilen itemleri update etmek için kullanılır.
+        })
     )
 }
 
